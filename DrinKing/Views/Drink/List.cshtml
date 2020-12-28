@@ -1,0 +1,16 @@
+﻿@using DrinKing.Data.Models
+@model IEnumerable<Drink>
+
+<div>
+    <h2>Tüm içeceklerin görüneceği sayfa</h2>
+</div>
+@{ 
+    foreach (var drink in Model)
+    {
+        <div>
+            <h4>içecek Adı : @drink.Name</h4>
+            <p>Fiyat : @drink.Price.ToString("c")</p>
+
+        </div>
+    }
+}

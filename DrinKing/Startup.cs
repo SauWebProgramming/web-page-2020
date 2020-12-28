@@ -1,4 +1,6 @@
 using DrinKing.Data;
+using DrinKing.Data.Interfaces;
+using DrinKing.Data.Mocks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +29,11 @@ namespace DrinKing
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddTransient<ICategoryRepository, MockCategoryRepository>();
+            services.AddTransient<IDrinkRepository, MockDrinkRepository>();
+            services.AddMvc();
+            
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
