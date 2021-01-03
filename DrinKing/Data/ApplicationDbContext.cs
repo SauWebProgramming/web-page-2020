@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using DrinKing.Data.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,7 @@ namespace DrinKing.Data
             : base(options)
         {
         }
+        public DbSet<Drink> Drinks { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }

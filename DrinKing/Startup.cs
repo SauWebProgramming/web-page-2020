@@ -1,6 +1,7 @@
 using DrinKing.Data;
 using DrinKing.Data.Interfaces;
 using DrinKing.Data.Mocks;
+using DrinKing.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,8 +31,8 @@ namespace DrinKing
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddTransient<ICategoryRepository, MockCategoryRepository>();
-            services.AddTransient<IDrinkRepository, MockDrinkRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IDrinkRepository, DrinkRepository>();
             services.AddMvc();
             
             services.AddDbContext<ApplicationDbContext>(options =>

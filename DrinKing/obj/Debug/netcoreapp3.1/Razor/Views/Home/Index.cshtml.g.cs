@@ -14,20 +14,27 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\Views\_ViewImports.cshtml"
-using DrinKing;
+using DrinKing.ViewModels;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\Views\_ViewImports.cshtml"
+using DrinKing;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\Views\_ViewImports.cshtml"
 using DrinKing.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"99464617055fdb505bb0bb7fd91f9b14f7b0d030", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b65a82efd1fbd94a8b365bea4be9b8a68827c424", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"afaefd665a4e648266e91491777aee2c4ff90107", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
