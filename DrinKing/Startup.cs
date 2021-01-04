@@ -1,6 +1,7 @@
 using DrinKing.Data;
 using DrinKing.Data.Interfaces;
 using DrinKing.Data.Mocks;
+using DrinKing.Data.Models;
 using DrinKing.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,7 +35,7 @@ namespace DrinKing
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IDrinkRepository, DrinkRepository>();
             services.AddMvc();
-            
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -45,8 +46,10 @@ namespace DrinKing
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
         {
+            DbInitializer.Seed(serviceProvider);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -76,3 +79,4 @@ namespace DrinKing
         }
     }
 }
+
