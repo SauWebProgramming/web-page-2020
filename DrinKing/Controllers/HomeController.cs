@@ -1,4 +1,6 @@
-﻿using DrinKing.Models;
+﻿using DrinKing.Data.Interfaces;
+using DrinKing.Models;
+using DrinKing.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,7 +13,21 @@ namespace DrinKing.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IDrinkRepository _drinkRepository;
+        public HomeController(IDrinkRepository drinkRepository)
+        {
+            _drinkRepository = drinkRepository;
+        }
+
+        public ViewResult Index()
+        {
+            var homeViewModel = new HomeViewModel
+            {
+                PreferredDrinks = _drinkRepository.PreferredDrinks
+            };
+            return View(homeViewModel);
+        }
+        /*private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -21,7 +37,7 @@ namespace DrinKing.Controllers
         public IActionResult Index()
         {
             return View();
-        }
+        }*/
 
         public IActionResult Privacy()
         {
