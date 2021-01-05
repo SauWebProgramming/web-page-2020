@@ -91,3 +91,4 @@ C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netco
 C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\DrinKing.pdb
 C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\DrinKing.genruntimeconfig.cache
 C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\Razor\Views\Drink\List.cshtml.g.cs
+C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\Razor\Views\Shared\DrinksSummary.cshtml.g.cs

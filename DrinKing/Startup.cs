@@ -5,6 +5,7 @@ using DrinKing.Data.Models;
 using DrinKing.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
@@ -34,7 +35,13 @@ namespace DrinKing
 
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IDrinkRepository, DrinkRepository>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => ShoppingCart.GetCart(sp));
+
             services.AddMvc();
+            services.AddMemoryCache();
+            services.AddSession();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
@@ -48,6 +55,8 @@ namespace DrinKing
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
         {
+            app.UseSession();
+
             DbInitializer.Seed(serviceProvider);
 
             if (env.IsDevelopment())
