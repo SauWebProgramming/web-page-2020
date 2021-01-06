@@ -94,3 +94,5 @@ C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netco
 C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\Razor\Views\Shared\DrinksSummary.cshtml.g.cs
 C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\Index.cshtml.g.cs
 C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Carousel.cshtml.g.cs
+C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\ShoppingCartSummary\Default.cshtml.g.cs
+C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs

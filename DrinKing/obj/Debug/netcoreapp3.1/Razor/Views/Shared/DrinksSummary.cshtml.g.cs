@@ -41,7 +41,7 @@ using DrinKing.Data.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e4d4f69120cf069c9a579b49792d1a53206afc33", @"/Views/Shared/DrinksSummary.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5f30594cd95fab8f3855113568a0aa7c7e6786ec", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5c6a20c96fbcfb995b686f1e0aed464dd48f3b02", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_DrinksSummary : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Drink>
     {
         #pragma warning disable 1998
