@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,6 +33,13 @@ namespace DrinKing
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //dene
+            //services.AddDbContext<ApplicationDbContext>(options =>
+            //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+
 
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IDrinkRepository, DrinkRepository>();
@@ -68,6 +76,10 @@ namespace DrinKing
                     template: "{controller=Home}/{action=Index}/{id?}");
             });*/
 
+
+            //app.UseIdentity();
+
+
             DbInitializer.Seed(serviceProvider);
 
             if (env.IsDevelopment())
@@ -89,16 +101,23 @@ namespace DrinKing
             app.UseAuthentication();
             app.UseAuthorization();
 
+            //2 defa UseEndPoints durumu HttpContext.GetEndpoint() kullanýlarak çözülebilir
             app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "categoryFilter",
-                    pattern: "Drink/{action}/{category?}");
+             {
+                  endpoints.MapControllerRoute(
+                   name: "categoryFilter",
+                   pattern: "Drink/{action}/{category?}");
+            });
 
+           app.UseEndpoints(endpoints =>
+           { 
+                   endpoints.MapRazorPages(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapRazorPages();
-            });
+
+           });
+                    
+
         }
     }
 }

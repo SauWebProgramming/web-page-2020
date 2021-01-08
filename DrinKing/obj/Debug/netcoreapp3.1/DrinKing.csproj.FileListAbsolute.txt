@@ -96,3 +96,13 @@ C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netco
 C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Carousel.cshtml.g.cs
 C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\ShoppingCartSummary\Default.cshtml.g.cs
 C:\Users\Acer\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
+C:\Users\Lenovo\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\DrinKing.csprojAssemblyReference.cache
+C:\Users\Lenovo\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\DrinKing.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\DrinKing.AssemblyInfo.cs
+C:\Users\Lenovo\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\DrinKing.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\DrinKing.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Lenovo\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\DrinKing.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Lenovo\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\DrinKing.RazorAssemblyInfo.cache
+C:\Users\Lenovo\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\DrinKing.RazorAssemblyInfo.cs
+C:\Users\Lenovo\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\DrinKing.dll
+C:\Users\Lenovo\Documents\GitHub\web-page-2020-B181200376\DrinKing\obj\Debug\netcoreapp3.1\DrinKing.pdb
