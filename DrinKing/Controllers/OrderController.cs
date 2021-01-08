@@ -20,13 +20,16 @@ namespace DrinKing.Controllers
             _shoppingCart = shoppingCart;
         }
 
-        
+
+        [Authorize]  //Sadece Giriş yapan kullanıcılar sepeti görebilecek
         public IActionResult Checkout()
         {
             return View();
         }
 
         [HttpPost] //hep post çevirdiğimiz için forma yapılan tanımlama
+        [Authorize]  //Sadece Giriş yapan kullanıcılar alışveriş yapabilecek
+        //kullanıcı girişi yapmayan biri Order/Checkout bağlantısına dahi gitse o ekranı göremeyecek login ekranı ile karşılaşacak
         public IActionResult Checkout(Order order)
         {
             var items = _shoppingCart.GetShoppingCartItems();

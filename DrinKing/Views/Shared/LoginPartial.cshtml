@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Identity.EntityFrameworkCore
+
+@inject SignInManager<IdentityUser> SignInManager
+
+@if (SignInManager.IsSignedIn(User))  //eğer kullanıcı giriş yapmış durumdaysa
+{
+    <form asp-area="" asp-controller="Account" asp-action="Logout" id="logoutForm"
+          method="post" class="navbar-right">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Çıkış Yap</a></li> <!-- Çıkış Yap Butonu -->
+        </ul>
+    </form>
+}
+else  //kullanıcı giriş yapmamış durumdaysa
+{
+<ul class="nav navbar-nav navbar-right">
+    <li><a id="registerLink" asp-controller="Account" asp-action="Register"> Üye Ol </a></li> <!-- Üye Ol -->
+    <li><a id="loginLink" asp-controller="Account" asp-action="Login"> Giriş Yap </a></li> <!-- Giriş Yap butonları gözükecek -->
+</ul>
+}
