@@ -44,6 +44,11 @@ namespace DrinKing.Data.Models
         [StringLength(50)]
         public string Country { get; set; }
 
+        [Required(ErrorMessage = "Lütfen şehrinizi giriniz.")]
+        [StringLength(50)]
+        public string City { get; set; }
+
+
         [Required(ErrorMessage = "Lütfen telefon numarası giriniz.")]
         [StringLength(25)]
         [DataType(DataType.PhoneNumber)]

@@ -25,5 +25,32 @@ namespace DrinKing.Controllers
         {
             return View();
         }
+
+        [HttpPost] //hep post çevirdiğimiz için forma yapılan tanımlama
+        public IActionResult Checkout(Order order)
+        {
+            var items = _shoppingCart.GetShoppingCartItems();
+            _shoppingCart.ShoppingCartItems = items;
+
+            if (_shoppingCart.ShoppingCartItems.Count == 0)
+            {
+                ModelState.AddModelError("", "Sepet boş görünüyor, lütfen sepete ürün ekleyin");
+            }
+
+            if (ModelState.IsValid)
+            {
+                _orderRepository.CreateOrder(order);
+                _shoppingCart.ClearCart();
+                return RedirectToAction("CheckoutComplete");
+            }
+
+            return View(order);
+        }
+
+        public IActionResult CheckoutComplete()
+        {
+            ViewBag.CheckoutCompleteMessage = "Siparişiniz için teşekkürler";
+            return View();
+        }
     }
 }
