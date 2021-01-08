@@ -56,6 +56,17 @@ namespace DrinKing
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
         {
             app.UseSession();
+            /*app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "categoryFilter",
+                    template: "Drink/{action}/{category?}",
+                    defaults: (Controller: "Drink", action: "List"));
+
+                routes.MapRoute(
+                    name: "default", 
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });*/
 
             DbInitializer.Seed(serviceProvider);
 
@@ -81,6 +92,9 @@ namespace DrinKing
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "categoryFilter",
+                    pattern: "Drink/{action}/{category?}");
+
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
