@@ -10,73 +10,76 @@ namespace DrinKing.Data
 {
     public class DbInitializer
     {
-        public static void Seed(IServiceProvider applicationBuilder)
+        public static void Seed(IApplicationBuilder app)
         {
-            ApplicationDbContext context =
-                applicationBuilder.GetRequiredService<ApplicationDbContext>();
-
-            if (!context.Categories.Any())
+            using (var scope = app.ApplicationServices.CreateScope())
             {
-                context.Categories.AddRange(Categories.Select(c => c.Value));
-            }
+                var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
-            if (!context.Drinks.Any())
-            {
-                context.AddRange
-                (
-                    new Drink
-                    {
-                        Name = "Coca-Cola Clear",
-                        Price = 11.99M,
-                        ShortDescription = "Tamamen renksiz, 0 kalori ve limon aroması.",
-                        LongDescription = "...",
-                        Category = Categories["Alkolsüz"],
-                        ImageUrl = "~/wwwroot/Images/clear.jpg",
-                        InStock = true,
-                        IsPreferredDrink = true,
-                        ImageThumbnailUrl = "~/wwwroot/Images/clear.jpg"
-                    },
-                    new Drink
-                    {
-                        Name = "Coca-Cola Clear Lime",
-                        Price = 12.95M,
-                        ShortDescription = "Özgün Clear tadı lime ferahlığı ile...",
-                        LongDescription = "",
-                        Category = Categories["Alkolsüz"],
-                        ImageUrl = "~/wwwroot/Images/clearlime.jpg",
-                        InStock = true,
-                        IsPreferredDrink = false,
-                        ImageThumbnailUrl = "~/wwwroot/Images/clearlime.webp"
-                    },
-                    new Drink
-                    {
-                        Name = "Coca-Cola Frozen ",
-                        Price = 14.95M,
-                        ShortDescription = "Enfes Coca-Cola Tadı frozen ile birleşiyor.",
-                        LongDescription = "",
-                        Category = Categories["Alkolsüz"],
-                        ImageUrl = "~/wwwroot/Images/frozen.jpg",
-                        InStock = true,
-                        IsPreferredDrink = false,
-                        ImageThumbnailUrl = "~/wwwroot/Images/frozen.jpg"
-                    },
-                    new Drink
-                    {
-                        Name = "Coca-Cola Cherry ",
-                        Price = 12.95M,
-                        ShortDescription = "Kiraz aşıklarını mest edecek Coca-Cola lezzeti.",
-                        LongDescription = "",
-                        Category = Categories["Alkolsüz"],
-                        ImageUrl = "~/wwwroot/Images/cherry.jpg",
-                        InStock = true,
-                        IsPreferredDrink = false,
-                        ImageThumbnailUrl = "~/wwwroot/Images/cherry.jpg"
-                    }
 
-                );
-            }
+                if (!context.Categories.Any())
+                {
+                    context.Categories.AddRange(Categories.Select(c => c.Value));
+                }
 
-            context.SaveChanges();
+                if (!context.Drinks.Any())
+                {
+                    context.Drinks.AddRange
+                    (
+                        new Drink
+                        {
+                            Name = "Coca-Cola Clear",
+                            Price = 11.99M,
+                            ShortDescription = "Tamamen renksiz, 0 kalori ve limon aroması.",
+                            LongDescription = "...",
+                            Category = Categories["Alkolsüz"],
+                            ImageUrl = "~/wwwroot/Images/clear.jpg",
+                            InStock = true,
+                            IsPreferredDrink = true,
+                            ImageThumbnailUrl = "~/wwwroot/Images/clear.jpg"
+                        },
+                        new Drink
+                        {
+                            Name = "Coca-Cola Clear Lime",
+                            Price = 12.95M,
+                            ShortDescription = "Özgün Clear tadı lime ferahlığı ile...",
+                            LongDescription = "",
+                            Category = Categories["Alkolsüz"],
+                            ImageUrl = "~/wwwroot/Images/clearlime.jpg",
+                            InStock = true,
+                            IsPreferredDrink = false,
+                            ImageThumbnailUrl = "~/wwwroot/Images/clearlime.webp"
+                        },
+                        new Drink
+                        {
+                            Name = "Coca-Cola Frozen ",
+                            Price = 14.95M,
+                            ShortDescription = "Enfes Coca-Cola Tadı frozen ile birleşiyor.",
+                            LongDescription = "",
+                            Category = Categories["Alkolsüz"],
+                            ImageUrl = "~/wwwroot/Images/frozen.jpg",
+                            InStock = true,
+                            IsPreferredDrink = false,
+                            ImageThumbnailUrl = "~/wwwroot/Images/frozen.jpg"
+                        },
+                        new Drink
+                        {
+                            Name = "Coca-Cola Cherry ",
+                            Price = 12.95M,
+                            ShortDescription = "Kiraz aşıklarını mest edecek Coca-Cola lezzeti.",
+                            LongDescription = "",
+                            Category = Categories["Alkolsüz"],
+                            ImageUrl = "~/wwwroot/Images/cherry.jpg",
+                            InStock = true,
+                            IsPreferredDrink = false,
+                            ImageThumbnailUrl = "~/wwwroot/Images/cherry.jpg"
+                        }
+
+                    );
+                    context.SaveChanges();
+                }
+
+            }        
         }
 
         private static Dictionary<string, Category> categories;
