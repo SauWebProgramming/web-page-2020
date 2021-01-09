@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lenovo\\Documents\\GitHub\\web-page-2020-B181200376\\DrinKing\\DrinKing.csproj": {}
+    "C:\\Users\\Acer\\Documents\\GitHub\\web-page-2020-B181200376\\DrinKing\\DrinKing.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lenovo\\Documents\\GitHub\\web-page-2020-B181200376\\DrinKing\\DrinKing.csproj": {
+    "C:\\Users\\Acer\\Documents\\GitHub\\web-page-2020-B181200376\\DrinKing\\DrinKing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\Documents\\GitHub\\web-page-2020-B181200376\\DrinKing\\DrinKing.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\Documents\\GitHub\\web-page-2020-B181200376\\DrinKing\\DrinKing.csproj",
         "projectName": "DrinKing",
-        "projectPath": "C:\\Users\\Lenovo\\Documents\\GitHub\\web-page-2020-B181200376\\DrinKing\\DrinKing.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\Documents\\GitHub\\web-page-2020-B181200376\\DrinKing\\obj\\",
+        "projectPath": "C:\\Users\\Acer\\Documents\\GitHub\\web-page-2020-B181200376\\DrinKing\\DrinKing.csproj",
+        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Acer\\Documents\\GitHub\\web-page-2020-B181200376\\DrinKing\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -56,9 +59,17 @@
               "target": "Package",
               "version": "[3.1.10, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[3.1.10, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
             }
           },
           "imports": [
