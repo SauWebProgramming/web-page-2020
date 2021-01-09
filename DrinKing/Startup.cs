@@ -80,7 +80,7 @@ namespace DrinKing
             //app.UseIdentity();
 
 
-            DbInitializer.Seed(serviceProvider);
+            DbInitializer.Seed(app);
 
             if (env.IsDevelopment())
             {
@@ -107,15 +107,12 @@ namespace DrinKing
                   endpoints.MapControllerRoute(
                    name: "categoryFilter",
                    pattern: "Drink/{action}/{category?}");
-            });
 
-           app.UseEndpoints(endpoints =>
-           { 
-                   endpoints.MapRazorPages(
+                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+             });
 
-           });
                     
 
         }
