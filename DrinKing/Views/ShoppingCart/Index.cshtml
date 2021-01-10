@@ -1,15 +1,14 @@
 ﻿@model ShoppingCartViewModel
 
 <div class="row checkoutForm">
-    <h2>Your shopping cart</h2>
-    <h4>Here are the drinks in your shopping cart.</h4>
+    <h2>Sepetin</h2>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>Selected amount</th>
                 <th>Drink</th>
-                <th class="text-right">Price</th>
-                <th class="text-right">Subtotal</th>
+                <th class="text-right">Fiyat</th>
+                <th class="text-right">Ara Toplam</th>
                 <th></th>
             </tr>
         </thead>
@@ -29,7 +28,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="3" class="text-right">Total:</td>
+                <td colspan="3" class="text-right">Toplam :</td>
                 <td class="text-right">
                     @Model.ShoppingCartTotal.ToString("c")
                 </td>
@@ -39,14 +38,14 @@
 
     <div class="text-right">
         <div class="btn-group ">
-            <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Check out</a>
+            <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Kontrol Et</a>
             <a class="btn-group">
                 <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                     Add more drinks<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a asp-controller="Drink" asp-action="List" asp-route-category="Alcoholic">Alcoholic</a></li>
-                    <li><a asp-controller="Drink" asp-action="List" asp-route-category="Non-alcoholic">Non Alcoholic</a></li>
+                    <li><a asp-controller="Drink" asp-action="List" asp-route-category="Alcoholic">Alkollü</a></li>
+                    <li><a asp-controller="Drink" asp-action="List" asp-route-category="Non-alcoholic">Alkolsüz</a></li>
                 </ul>
             </a>
         </div>
